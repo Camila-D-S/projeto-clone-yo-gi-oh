@@ -33,6 +33,7 @@ body{
     height: 500px;
     border-radius: 10px;
     position: relative; /*o pai precisa do position relative, já que o filho tem position absolute, ele tbm precisa ser relativo ao pai (lista-personagens)*/
+    padding: 12px;
 }
 .slider{
     display: flex;
@@ -151,4 +152,31 @@ body::-webkit-scrollbar-track{ /* Representa o "trilho" por onde o botão de rol
 
 ::-webkit-scrollbar-thumb:hover { /*Modifica a aparência quando o mouse passa sobre o botão de rolagem*/
     background: #c08057;
+}
+
+.carta-virada{
+    display: none;
+}
+
+.carta-virada.mostrar-fundo-carta{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../imagens/fundo-carta.jpg);
+    background-size: cover;
+    background-position:center;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.cartao.virar{
+    transform: rotateZ(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.esconder{
+    display: none;
 }
